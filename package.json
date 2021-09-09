@@ -5,6 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "build": "babel src -d lib",
+    "watch": "node-sass --watch src/resources/scss --output src/public/css",
     "start": "nodemon --inspect src/index.js -L",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -33,6 +34,7 @@
     "@babel/core": "^7.15.5",
     "@babel/preset-env": "^7.15.4",
     "morgan": "^1.10.0",
+    "node-sass": "^6.0.1",
     "nodemon": "^2.0.12"
   }
 }
