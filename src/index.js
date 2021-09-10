@@ -6,7 +6,7 @@ const app = express()
 const port = 3000
 app.use(express.static(path.join(__dirname, "public")))
 //http logs
-app.use(morgan('combined'))
+app.use(morgan('tiny'))
 //template engine
 app.engine('hbs', handlebars({
   extname: ".hbs"
