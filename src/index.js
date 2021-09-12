@@ -14,9 +14,9 @@ app.use(
     }),
 );
 //http logs
-app.use(        morgan('tiny'));
+app.use(morgan('tiny'));
 //template engine
-app.        engine(
+app.engine(
     'hbs',
     handlebars({
         extname: '.hbs',
@@ -26,7 +26,7 @@ app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'resources/views'));
 
 // Routes init
-route       (app);
+route(app);
 
 //listen port 300
 app.listen(port, () => {
