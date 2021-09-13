@@ -1,9 +1,12 @@
-const res = require('express/lib/response');
-
+const Course = require('../models/Course');
 class SiteController {
     // [GET] /
     index(req, res) {
-        res.render('home');
+        Course.find({}, function (error, courses) {
+            if (!error) res.json(courses);
+            res.status(400).json();
+        });
+        // res.render('home');
     }
     // [GET] /search
 
