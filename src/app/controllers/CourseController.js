@@ -38,7 +38,11 @@ class CourseController {
     }
     // [PUT] /courses/:id
     update(req, res, next) {
-        res.json(req.body);
+        const formData = req.body;
+        formData.image = `https://img.youtube.com/vi/${req.body.videoId}/sddefault.jpg`;
+        Course.updateOne({ _id: req.params.id }, req.body)
+            .then(() => res.redirect('/me/stored/courses'))
+            .catch(next);
     }
 }
 
